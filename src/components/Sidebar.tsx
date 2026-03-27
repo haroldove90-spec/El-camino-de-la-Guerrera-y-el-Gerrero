@@ -12,6 +12,7 @@ import {
   X
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import { useAuth } from '../context/AuthContext';
 
 export type UserRole = 'admin' | 'medico' | 'psicologo' | 'operativo' | 'trabajo_social';
 
@@ -83,6 +84,7 @@ const menuItems: MenuItem[] = [
 ];
 
 export const Sidebar: React.FC<SidebarProps> = ({ role, userName = "Usuario", isOpen, onClose, onViewChange, currentView }) => {
+  const { logout } = useAuth();
   const filteredMenu = menuItems.filter(item => item.roles.includes(role));
 
   return (
@@ -167,7 +169,10 @@ export const Sidebar: React.FC<SidebarProps> = ({ role, userName = "Usuario", is
 
         {/* Footer */}
         <div className="p-6 border-t border-white/5">
-          <button className="flex items-center gap-4 w-full px-4 py-4 rounded-2xl text-white/30 hover:bg-red-500/10 hover:text-red-400 transition-all duration-300 font-bold text-sm">
+          <button 
+            onClick={logout}
+            className="flex items-center gap-4 w-full px-4 py-4 rounded-2xl text-white/30 hover:bg-red-500/10 hover:text-red-400 transition-all duration-300 font-bold text-sm"
+          >
             <LogOut className="w-5 h-5" />
             Cerrar Sesión
           </button>

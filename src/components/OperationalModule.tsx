@@ -231,7 +231,7 @@ export const OperationalModule: React.FC = () => {
                 onClick={() => setSelectedBed(bed)}
                 className={`relative min-w-[160px] lg:min-w-0 p-4 rounded-2xl border-2 transition-all text-left group snap-start ${
                   bed.paciente 
-                    ? 'bg-white border-slate-100 shadow-sm hover:border-blue-200' 
+                    ? 'bg-white border-slate-100 shadow-sm hover:border-brand-gold/30' 
                     : 'bg-slate-50 border-dashed border-slate-200 opacity-60'
                 }`}
               >
@@ -247,7 +247,7 @@ export const OperationalModule: React.FC = () => {
                 {bed.paciente ? (
                   <div className="space-y-2">
                     <div className="flex items-center gap-2">
-                      <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center text-blue-600">
+                      <div className="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center text-brand-black">
                         <User className="w-4 h-4" />
                       </div>
                       <p className="text-xs font-bold text-slate-800 line-clamp-1">{bed.paciente.nombre}</p>
@@ -354,7 +354,7 @@ export const OperationalModule: React.FC = () => {
                 </div>
                 <p className="text-xs leading-relaxed">
                   {log.paciente_nombre && (
-                    <span className="font-bold mr-1 text-blue-300">[{log.paciente_nombre}]:</span>
+                    <span className="font-bold mr-1 text-brand-gold">[{log.paciente_nombre}]:</span>
                   )}
                   {log.descripcion}
                 </p>

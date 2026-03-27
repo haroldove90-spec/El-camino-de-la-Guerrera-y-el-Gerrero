@@ -60,7 +60,7 @@ export const PWAHandler: React.FC = () => {
             exit={{ opacity: 0, y: 50 }}
             className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[200] w-[90%] max-w-md bg-slate-900 text-white p-4 rounded-2xl shadow-2xl border border-slate-700 flex items-center gap-4"
           >
-            <div className="bg-blue-600 p-3 rounded-xl">
+            <div className="bg-brand-gold p-3 rounded-xl text-brand-black">
               <Download className="w-6 h-6" />
             </div>
             <div className="flex-1">
@@ -70,7 +70,7 @@ export const PWAHandler: React.FC = () => {
             <div className="flex flex-col gap-2">
               <button
                 onClick={handleInstall}
-                className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold rounded-lg transition-colors"
+                className="px-4 py-2 bg-brand-gold hover:bg-white text-brand-black text-xs font-bold rounded-lg transition-colors"
               >
                 Instalar
               </button>

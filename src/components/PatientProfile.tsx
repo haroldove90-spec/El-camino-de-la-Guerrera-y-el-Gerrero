@@ -167,7 +167,7 @@ export const PatientProfile: React.FC<PatientProfileProps> = ({ userRole, patien
               className="space-y-6"
             >
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <StatCard icon={Activity} label="Presión Arterial" value="120/80" color="blue" />
+                <StatCard icon={Activity} label="Presión Arterial" value="120/80" color="black" />
                 <StatCard icon={Activity} label="Frecuencia Card." value="72 lpm" color="red" />
                 <StatCard icon={Activity} label="Temperatura" value="36.5 °C" color="orange" />
               </div>
@@ -193,7 +193,7 @@ export const PatientProfile: React.FC<PatientProfileProps> = ({ userRole, patien
                 <div className="grid grid-cols-2 sm:flex sm:justify-between items-center gap-2">
                   {['Precontemplación', 'Contemplación', 'Preparación', 'Acción', 'Mantenimiento'].map((stage, i) => (
                     <div key={stage} className={`text-center p-2 rounded-lg text-[10px] font-bold uppercase transition-all ${
-                      i === 2 ? 'bg-blue-600 text-white' : 'bg-slate-100 text-slate-400'
+                      i === 2 ? 'bg-brand-black text-white' : 'bg-slate-100 text-slate-400'
                     } ${i === 4 ? 'col-span-2 sm:col-span-1' : ''}`}>
                       {stage}
                     </div>
@@ -283,7 +283,7 @@ const InfoRow = ({ icon: Icon, label, value }: { icon: any, label: string, value
 
 const StatCard = ({ icon: Icon, label, value, color }: { icon: any, label: string, value: string, color: string }) => {
   const colors: any = {
-    blue: 'bg-blue-50 text-blue-600 border-blue-100',
+    black: 'bg-brand-black text-white border-brand-black/10',
     red: 'bg-red-50 text-red-600 border-red-100',
     orange: 'bg-orange-50 text-orange-600 border-orange-100',
   };
@@ -304,18 +304,18 @@ const NoteForm = ({ title, placeholder, value, onChange, onSave }: any) => (
   <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
     <h3 className="font-bold text-lg text-slate-800 flex items-center justify-between">
       {title}
-      <PlusCircle className="w-5 h-5 text-blue-500" />
+      <PlusCircle className="w-5 h-5 text-brand-gold" />
     </h3>
     <textarea
       value={value}
       onChange={(e) => onChange(e.target.value)}
-      className="w-full h-32 p-4 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none transition-all resize-none text-sm"
+      className="w-full h-32 p-4 rounded-xl border border-slate-200 focus:ring-2 focus:ring-brand-gold outline-none transition-all resize-none text-sm"
       placeholder={placeholder}
     />
     <div className="flex justify-end">
       <button 
         onClick={onSave}
-        className="bg-blue-600 text-white px-6 py-2 rounded-xl font-bold hover:bg-blue-700 transition-all shadow-lg shadow-blue-200"
+        className="bg-brand-black text-white px-6 py-2 rounded-xl font-bold hover:bg-brand-surface transition-all shadow-lg shadow-brand-black/20"
       >
         Guardar Nota
       </button>

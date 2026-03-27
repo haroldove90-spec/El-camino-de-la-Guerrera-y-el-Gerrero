@@ -112,7 +112,7 @@ export const FinanceModule: React.FC = () => {
           className="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm"
         >
           <div className="flex items-center justify-between mb-4">
-            <div className="p-3 bg-blue-50 rounded-2xl text-blue-600">
+            <div className="p-3 bg-slate-50 rounded-2xl text-brand-black">
               <Users className="w-6 h-6" />
             </div>
           </div>
@@ -256,7 +256,7 @@ export const FinanceModule: React.FC = () => {
                       </span>
                     </td>
                     <td className="px-8 py-5">
-                      <button className="p-2 text-slate-400 hover:text-blue-600 transition-colors">
+                      <button className="p-2 text-slate-400 hover:text-brand-gold transition-colors">
                         <Download className="w-4 h-4" />
                       </button>
                     </td>
@@ -271,11 +271,11 @@ export const FinanceModule: React.FC = () => {
       {/* Scholarship Section */}
       {user?.role === 'admin' && (
         <div className="bg-slate-900 rounded-3xl p-8 border border-slate-800 shadow-2xl overflow-hidden relative">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-blue-600/10 blur-[100px] rounded-full -translate-y-1/2 translate-x-1/2" />
+          <div className="absolute top-0 right-0 w-64 h-64 bg-brand-gold/10 blur-[100px] rounded-full -translate-y-1/2 translate-x-1/2" />
           <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">
             <div className="max-w-xl">
               <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 bg-blue-500/20 rounded-lg text-blue-400">
+                <div className="p-2 bg-brand-gold/20 rounded-lg text-brand-gold">
                   <GraduationCap className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-bold text-white">Gestión de Becas y Apoyos</h3>
@@ -291,7 +291,7 @@ export const FinanceModule: React.FC = () => {
                 <input 
                   type="text"
                   placeholder="Nombre o Folio..."
-                  className="w-full bg-slate-800 border-none rounded-xl py-3 px-4 text-sm text-slate-200 outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full bg-slate-800 border-none rounded-xl py-3 px-4 text-sm text-slate-200 outline-none focus:ring-2 focus:ring-brand-gold"
                 />
               </div>
               <div className="lg:w-32">
@@ -299,10 +299,10 @@ export const FinanceModule: React.FC = () => {
                 <input 
                   type="number"
                   placeholder="0"
-                  className="w-full bg-slate-800 border-none rounded-xl py-3 px-4 text-sm text-slate-200 outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full bg-slate-800 border-none rounded-xl py-3 px-4 text-sm text-slate-200 outline-none focus:ring-2 focus:ring-brand-gold"
                 />
               </div>
-              <button className="mt-6 bg-blue-600 text-white px-8 py-3 rounded-xl font-bold text-sm shadow-lg shadow-blue-500/20 hover:bg-blue-700 transition-all">
+              <button className="mt-6 bg-brand-black text-white px-8 py-3 rounded-xl font-bold text-sm shadow-lg shadow-brand-black/20 hover:bg-brand-surface transition-all">
                 Aplicar
               </button>
             </div>

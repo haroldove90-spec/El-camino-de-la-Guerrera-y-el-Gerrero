@@ -110,12 +110,12 @@ export const AdmissionStepper: React.FC = () => {
           {STEPS.map((s) => (
             <div key={s.id} className="relative z-10 flex flex-col items-center">
               <div className={`w-10 h-10 lg:w-12 lg:h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
-                step >= s.id ? 'bg-blue-600 text-white shadow-lg shadow-blue-200' : 'bg-white text-slate-400 border-2 border-slate-200'
+                step >= s.id ? 'bg-brand-black text-white shadow-lg shadow-brand-black/20' : 'bg-white text-slate-400 border-2 border-slate-200'
               }`}>
                 <s.icon className="w-5 h-5 lg:w-6 lg:h-6" />
               </div>
               <span className={`mt-2 text-[10px] lg:text-xs font-bold uppercase tracking-wider ${
-                step >= s.id ? 'text-blue-600' : 'text-slate-400'
+                step >= s.id ? 'text-brand-black' : 'text-slate-400'
               }`}>
                 {s.title}
               </span>
@@ -142,7 +142,7 @@ export const AdmissionStepper: React.FC = () => {
                     <label className="block text-sm font-semibold text-slate-700 mb-1">Nombre Completo</label>
                     <input 
                       {...register('nombre_completo')}
-                      className="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 outline-none transition-all"
+                      className="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-gold outline-none transition-all"
                       placeholder="Ej. Juan Pérez García"
                     />
                     {errors.nombre_completo && <p className="mt-1 text-xs text-red-500">{errors.nombre_completo.message}</p>}
@@ -151,7 +151,7 @@ export const AdmissionStepper: React.FC = () => {
                     <label className="block text-sm font-semibold text-slate-700 mb-1">CURP</label>
                     <input 
                       {...register('curp')}
-                      className="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 outline-none transition-all uppercase"
+                      className="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-gold outline-none transition-all uppercase"
                       placeholder="18 caracteres"
                     />
                     {errors.curp && <p className="mt-1 text-xs text-red-500">{errors.curp.message}</p>}
@@ -161,7 +161,7 @@ export const AdmissionStepper: React.FC = () => {
                     <input 
                       type="date"
                       {...register('fecha_nacimiento')}
-                      className="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 outline-none transition-all"
+                      className="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-gold outline-none transition-all"
                     />
                     {errors.fecha_nacimiento && <p className="mt-1 text-xs text-red-500">{errors.fecha_nacimiento.message}</p>}
                   </div>
@@ -169,7 +169,7 @@ export const AdmissionStepper: React.FC = () => {
                     <label className="block text-sm font-semibold text-slate-700 mb-1">Contacto de Emergencia</label>
                     <input 
                       {...register('contacto_emergencia')}
-                      className="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 outline-none transition-all"
+                      className="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-gold outline-none transition-all"
                       placeholder="Nombre y Teléfono"
                     />
                     {errors.contacto_emergencia && <p className="mt-1 text-xs text-red-500">{errors.contacto_emergencia.message}</p>}
@@ -178,7 +178,7 @@ export const AdmissionStepper: React.FC = () => {
                     <label className="block text-sm font-semibold text-slate-700 mb-1">Procedencia</label>
                     <input 
                       {...register('procedencia')}
-                      className="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 outline-none transition-all"
+                      className="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-gold outline-none transition-all"
                       placeholder="Ciudad / Estado"
                     />
                     {errors.procedencia && <p className="mt-1 text-xs text-red-500">{errors.procedencia.message}</p>}
@@ -201,7 +201,7 @@ export const AdmissionStepper: React.FC = () => {
                     <label className="block text-sm font-semibold text-slate-700 mb-1">Sustancia Principal</label>
                     <select 
                       {...register('sustancia_principal')}
-                      className="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 outline-none transition-all bg-white"
+                      className="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-gold outline-none transition-all bg-white"
                     >
                       <option value="">Seleccione una opción</option>
                       <option value="alcohol">Alcohol</option>
@@ -219,7 +219,7 @@ export const AdmissionStepper: React.FC = () => {
                     <input 
                       type="number"
                       {...register('edad_inicio', { valueAsNumber: true })}
-                      className="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 outline-none transition-all"
+                      className="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-gold outline-none transition-all"
                     />
                     {errors.edad_inicio && <p className="mt-1 text-xs text-red-500">{errors.edad_inicio.message}</p>}
                   </div>
@@ -229,7 +229,7 @@ export const AdmissionStepper: React.FC = () => {
                       type="checkbox"
                       id="es_reingreso"
                       {...register('es_reingreso')}
-                      className="w-5 h-5 text-blue-600 rounded focus:ring-blue-500"
+                      className="w-5 h-5 text-brand-black rounded focus:ring-brand-gold"
                     />
                     <label htmlFor="es_reingreso" className="text-sm font-medium text-slate-700 cursor-pointer">
                       ¿Es un reingreso del paciente?
