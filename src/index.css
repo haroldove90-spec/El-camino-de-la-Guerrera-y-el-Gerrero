@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Playfair Display", serif;
+  
+  --color-brand-black: #0A0A0A;
+  --color-brand-gold: #D4AF37;
+  --color-brand-surface: #141414;
+  --color-brand-border: #262626;
+}
+
+@layer base {
+  body {
+    @apply bg-[#F8F9FA] text-slate-900 font-sans antialiased;
+  }
+}
+
+@layer components {
+  .btn-premium {
+    @apply relative overflow-hidden px-8 py-4 bg-brand-black text-white font-bold rounded-2xl 
+           transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] 
+           shadow-[0_10px_20px_-10px_rgba(0,0,0,0.5)] hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.6)];
+  }
+  
+  .card-premium {
+    @apply bg-white border border-slate-200 rounded-[2rem] p-8 shadow-sm transition-all duration-300 hover:shadow-xl hover:border-slate-300;
+  }
+
+  .glass-dark {
+    @apply bg-brand-black/90 backdrop-blur-xl border border-white/10;
+  }
+}
+
+/* Custom scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #D1D5DB;
+  border-radius: 10px;
+}
+.custom-scrollbar-dark::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar-dark::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar-dark::-webkit-scrollbar-thumb {
+  background: #404040;
+  border-radius: 10px;
+}

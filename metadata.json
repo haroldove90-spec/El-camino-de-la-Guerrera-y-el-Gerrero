@@ -1,0 +1,5 @@
+{
+  "name": "El camino del Guerrero y la Guerrera",
+  "description": "Sistema integral de gestión para centros de tratamiento de adicciones, incluyendo perfiles de personal, expedientes de pacientes y notas de evolución con seguridad RLS.",
+  "requestFramePermissions": []
+}
