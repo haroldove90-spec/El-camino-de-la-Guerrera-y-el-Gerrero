@@ -122,19 +122,19 @@ const LandingPage = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: index * 0.1 }}
             onClick={() => login(r.id)}
-            className="group relative flex flex-col items-start p-8 bg-white/5 border border-white/10 rounded-[2.5rem] text-left transition-all duration-500 hover:bg-white/10 hover:border-brand-gold/50 hover:-translate-y-2 overflow-hidden"
+            className="group relative flex flex-col items-start p-6 bg-white/5 border border-white/10 rounded-3xl text-left transition-all duration-500 hover:bg-white/10 hover:border-brand-gold/50 hover:-translate-y-1 overflow-hidden"
           >
-            <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${r.color} opacity-0 group-hover:opacity-10 blur-2xl transition-opacity duration-500`} />
+            <div className={`absolute top-0 right-0 w-24 h-24 bg-gradient-to-br ${r.color} opacity-0 group-hover:opacity-10 blur-2xl transition-opacity duration-500`} />
             
-            <div className="p-4 bg-white/5 rounded-2xl mb-6 group-hover:bg-brand-gold/20 transition-colors duration-500">
-              <r.icon className="w-8 h-8 text-white group-hover:text-brand-gold transition-colors" />
+            <div className="p-3 bg-white/5 rounded-xl mb-4 group-hover:bg-brand-gold/20 transition-colors duration-500">
+              <r.icon className="w-6 h-6 text-white group-hover:text-brand-gold transition-colors" />
             </div>
             
-            <h3 className="text-xl font-bold text-white mb-2">{r.label}</h3>
-            <p className="text-white/40 text-sm leading-relaxed mb-8">{r.description}</p>
+            <h3 className="text-lg font-bold text-white mb-1">{r.label}</h3>
+            <p className="text-white/40 text-xs leading-relaxed mb-4 line-clamp-2">{r.description}</p>
             
-            <div className="mt-auto flex items-center gap-2 text-brand-gold text-xs font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all duration-500 translate-x-[-10px] group-hover:translate-x-0">
-              Acceder <ArrowRight className="w-4 h-4" />
+            <div className="mt-auto flex items-center gap-2 text-brand-gold text-[10px] font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all duration-500 translate-x-[-5px] group-hover:translate-x-0">
+              Acceder <ArrowRight className="w-3 h-3" />
             </div>
           </motion.button>
         ))}
