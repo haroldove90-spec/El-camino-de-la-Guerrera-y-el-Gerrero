@@ -43,13 +43,13 @@ export const PatientProfile: React.FC<PatientProfileProps> = ({ userRole, patien
 
   const tabs = [
     { id: 'general', label: 'General', icon: User, roles: ['admin', 'medico', 'psicologo', 'operativo', 'trabajo_social'] },
-    { id: 'medica', label: 'Médica', icon: Stethoscope, roles: ['admin', 'medico'] },
-    { id: 'psicologia', label: 'Psicología', icon: Brain, roles: ['admin', 'psicologo'] },
-    { id: 'social', label: 'Trabajo Social', icon: HeartHandshake, roles: ['admin', 'trabajo_social'] },
+    { id: 'medica', label: 'Médica', icon: Stethoscope, roles: ['admin', 'medico', 'psicologo', 'operativo', 'trabajo_social'] },
+    { id: 'psicologia', label: 'Psicología', icon: Brain, roles: ['admin', 'medico', 'psicologo', 'operativo', 'trabajo_social'] },
+    { id: 'social', label: 'Trabajo Social', icon: HeartHandshake, roles: ['admin', 'medico', 'psicologo', 'operativo', 'trabajo_social'] },
     { id: 'bitacora', label: 'Bitácora', icon: History, roles: ['admin', 'medico', 'psicologo', 'operativo', 'trabajo_social'] },
   ];
 
-  const canAccess = (tabRoles: string[]) => tabRoles.includes(userRole);
+  const canAccess = (tabRoles: string[]) => true;
 
   const handleAddNote = (type: string) => {
     if (!noteContent.trim()) return;
@@ -88,12 +88,10 @@ export const PatientProfile: React.FC<PatientProfileProps> = ({ userRole, patien
           <div className="bg-green-50 text-green-700 px-3 py-1.5 lg:px-4 lg:py-2 rounded-xl border border-green-100 text-[10px] lg:text-sm font-bold flex-1 sm:flex-none text-center">
             Estatus: Activo
           </div>
-          {(userRole === 'admin' || userRole === 'medico') && (
-            <ExportClinicalSummary 
-              patient={patient} 
-              notes={MOCK_NOTES.filter(n => n.paciente_id === patient.id)} 
-            />
-          )}
+          <ExportClinicalSummary 
+            patient={patient} 
+            notes={MOCK_NOTES.filter(n => n.paciente_id === patient.id)} 
+          />
         </div>
       </div>
 

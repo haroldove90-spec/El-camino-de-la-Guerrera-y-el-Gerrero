@@ -269,46 +269,44 @@ export const FinanceModule: React.FC = () => {
       </div>
 
       {/* Scholarship Section */}
-      {user?.role === 'admin' && (
-        <div className="bg-slate-900 rounded-3xl p-8 border border-slate-800 shadow-2xl overflow-hidden relative">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-brand-gold/10 blur-[100px] rounded-full -translate-y-1/2 translate-x-1/2" />
-          <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">
-            <div className="max-w-xl">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 bg-brand-gold/20 rounded-lg text-brand-gold">
-                  <GraduationCap className="w-6 h-6" />
-                </div>
-                <h3 className="text-xl font-bold text-white">Gestión de Becas y Apoyos</h3>
+      <div className="bg-slate-900 rounded-3xl p-8 border border-slate-800 shadow-2xl overflow-hidden relative">
+        <div className="absolute top-0 right-0 w-64 h-64 bg-brand-gold/10 blur-[100px] rounded-full -translate-y-1/2 translate-x-1/2" />
+        <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">
+          <div className="max-w-xl">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="p-2 bg-brand-gold/20 rounded-lg text-brand-gold">
+                <GraduationCap className="w-6 h-6" />
               </div>
-              <p className="text-slate-400 text-sm leading-relaxed">
-                Aplique descuentos o apoyos económicos a familias de escasos recursos. 
-                El sistema recalculará automáticamente los saldos pendientes y generará los reportes fiscales correspondientes.
-              </p>
+              <h3 className="text-xl font-bold text-white">Gestión de Becas y Apoyos</h3>
             </div>
-            <div className="flex items-center gap-4 w-full lg:w-auto">
-              <div className="flex-1 lg:w-64">
-                <label className="block text-[10px] font-bold text-slate-500 uppercase mb-2 ml-1">Buscar Paciente</label>
-                <input 
-                  type="text"
-                  placeholder="Nombre o Folio..."
-                  className="w-full bg-slate-800 border-none rounded-xl py-3 px-4 text-sm text-slate-200 outline-none focus:ring-2 focus:ring-brand-gold"
-                />
-              </div>
-              <div className="lg:w-32">
-                <label className="block text-[10px] font-bold text-slate-500 uppercase mb-2 ml-1">% Beca</label>
-                <input 
-                  type="number"
-                  placeholder="0"
-                  className="w-full bg-slate-800 border-none rounded-xl py-3 px-4 text-sm text-slate-200 outline-none focus:ring-2 focus:ring-brand-gold"
-                />
-              </div>
-              <button className="mt-6 bg-brand-black text-white px-8 py-3 rounded-xl font-bold text-sm shadow-lg shadow-brand-black/20 hover:bg-brand-surface transition-all">
-                Aplicar
-              </button>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              Aplique descuentos o apoyos económicos a familias de escasos recursos. 
+              El sistema recalculará automáticamente los saldos pendientes y generará los reportes fiscales correspondientes.
+            </p>
+          </div>
+          <div className="flex items-center gap-4 w-full lg:w-auto">
+            <div className="flex-1 lg:w-64">
+              <label className="block text-[10px] font-bold text-slate-500 uppercase mb-2 ml-1">Buscar Paciente</label>
+              <input 
+                type="text"
+                placeholder="Nombre o Folio..."
+                className="w-full bg-slate-800 border-none rounded-xl py-3 px-4 text-sm text-slate-200 outline-none focus:ring-2 focus:ring-brand-gold"
+              />
             </div>
+            <div className="lg:w-32">
+              <label className="block text-[10px] font-bold text-slate-500 uppercase mb-2 ml-1">% Beca</label>
+              <input 
+                type="number"
+                placeholder="0"
+                className="w-full bg-slate-800 border-none rounded-xl py-3 px-4 text-sm text-slate-200 outline-none focus:ring-2 focus:ring-brand-gold"
+              />
+            </div>
+            <button className="mt-6 bg-brand-black text-white px-8 py-3 rounded-xl font-bold text-sm shadow-lg shadow-brand-black/20 hover:bg-brand-surface transition-all">
+              Aplicar
+            </button>
           </div>
         </div>
-      )}
+      </div>
     </div>
   );
 };

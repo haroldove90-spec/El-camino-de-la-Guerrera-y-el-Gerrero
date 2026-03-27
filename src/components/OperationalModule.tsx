@@ -95,9 +95,7 @@ const INITIAL_LOGS: LogEntry[] = [
 
 // --- Panic Button Component ---
 const PanicFAB = ({ onPanic }: { onPanic: () => void }) => {
-  const { role } = useAuth();
-  if (role !== 'admin' && role !== 'operativo' && role !== 'medico') return null;
-
+  // Bypassing role check for development as requested
   return (
     <motion.button
       whileHover={{ scale: 1.1 }}
@@ -292,9 +290,7 @@ export const OperationalModule: React.FC = () => {
                   <h2 className="text-sm font-bold text-white uppercase tracking-widest">Bitácora de Turno</h2>
                 </div>
             <div className="flex items-center gap-3 overflow-x-auto pb-2 sm:pb-0">
-              {(user?.role === 'admin' || user?.role === 'operativo') && (
-                <ExportIncidentReport logs={logs} />
-              )}
+              <ExportIncidentReport logs={logs} />
               <div className="flex gap-1">
                 {(['todos', 'informativo', 'alerta', 'urgente'] as const).map((f) => (
                   <button

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Sidebar } from './components/Sidebar';
+import { RoleSwitcher } from './components/RoleSwitcher';
 import { AdmissionStepper } from './components/AdmissionStepper';
 import { PatientProfile } from './components/PatientProfile';
 import { OperationalModule } from './components/OperationalModule';
@@ -151,58 +152,6 @@ const LandingPage = () => {
   );
 };
 
-const RoleSwitcher = () => {
-  const { role, setRole } = useAuth();
-  const [isOpen, setIsOpen] = useState(false);
-
-  const roles: { id: UserRole; label: string }[] = [
-    { id: 'admin', label: 'Administrador' },
-    { id: 'medico', label: 'Médico' },
-    { id: 'psicologo', label: 'Psicólogo' },
-    { id: 'operativo', label: 'Operativo' },
-    { id: 'trabajo_social', label: 'Trabajo Social' },
-  ];
-
-  return (
-    <div className="relative">
-      <button 
-        onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 text-white rounded-xl text-[10px] font-bold uppercase tracking-widest hover:bg-white/10 transition-all"
-      >
-        <ShieldCheck className="w-3 h-3 text-brand-gold" />
-        {role}
-        <ChevronDown className="w-3 h-3" />
-      </button>
-      
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div 
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 10 }}
-            className="absolute right-0 mt-2 w-48 bg-brand-surface border border-brand-border rounded-2xl shadow-2xl z-[100] overflow-hidden"
-          >
-            {roles.map((r) => (
-              <button
-                key={r.id}
-                onClick={() => {
-                  setRole(r.id);
-                  setIsOpen(false);
-                }}
-                className={`w-full text-left px-4 py-3 text-xs font-bold transition-colors ${
-                  role === r.id ? 'bg-brand-gold/10 text-brand-gold' : 'hover:bg-white/5 text-white/60 hover:text-white'
-                }`}
-              >
-                {r.label}
-              </button>
-            ))}
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  );
-};
-
 const DashboardContent = () => {
   const { role, user, logout } = useAuth();
   const [currentView, setCurrentView] = useState<View>('dashboard');
@@ -294,29 +243,30 @@ const DashboardContent = () => {
                 <ClipboardList className="w-4 h-4" />
                 Operaciones
               </button>
-              {role === 'admin' && (
-                <button 
-                  onClick={() => setCurrentView('finanzas')}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-all ${
-                    currentView === 'finanzas' ? 'bg-brand-gold text-brand-black shadow-lg shadow-brand-gold/20' : 'text-white/40 hover:text-white'
-                  }`}
-                >
-                  <DollarSign className="w-4 h-4" />
-                  Finanzas
-                </button>
-              )}
+              <button 
+                onClick={() => setCurrentView('finanzas')}
+                className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-all ${
+                  currentView === 'finanzas' ? 'bg-brand-gold text-brand-black shadow-lg shadow-brand-gold/20' : 'text-white/40 hover:text-white'
+                }`}
+              >
+                <DollarSign className="w-4 h-4" />
+                Finanzas
+              </button>
             </div>
 
             <div className="hidden sm:block h-8 w-px bg-white/10" />
 
             <div className="flex items-center gap-3">
-              <RoleSwitcher />
+              <div className="hidden sm:block">
+                <RoleSwitcher />
+              </div>
               <button 
                 onClick={logout}
-                className="p-2.5 bg-white/5 border border-white/10 text-white/60 hover:text-red-400 hover:bg-red-500/10 rounded-xl transition-all"
+                className="flex items-center gap-2 p-2.5 bg-white/5 border border-white/10 text-white/60 hover:text-red-400 hover:bg-red-500/10 rounded-xl transition-all"
                 title="Cerrar Sesión"
               >
                 <LogOut className="w-5 h-5" />
+                <span className="text-[10px] font-bold uppercase tracking-widest">Cerrar Sesión</span>
               </button>
             </div>
           </div>
